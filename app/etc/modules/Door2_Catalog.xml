@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category    Door2
+ * @package     Door2_Catalog
+ * @author      Manigesh
+ */
+ -->
+<config>
+    <modules>
+        <Door2_Catalog>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Door2_Catalog>
+    </modules>
+</config> 

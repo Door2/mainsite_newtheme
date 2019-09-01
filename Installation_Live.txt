@@ -1,0 +1,20 @@
+Steps:
+
+1. Copy the mainsite folder (https://github.com/door2in/mainsite.git)
+
+2. Create database with name "door2in"
+
+3. cd mainsite/sql/<<latest dump.sql>>
+
+4. Run the below script
+
+UPDATE core_config_data SET VALUE = "http://www.door2.in/" WHERE PATH = "web/unsecure/base_url";
+UPDATE core_config_data SET VALUE = "http://www.door2.in/" WHERE PATH = "web/secure/base_url";
+
+5. cd mainsite/app/etc/local.xml
+		i) <username>
+		ii) <password>
+
+
+
+

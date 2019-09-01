@@ -1,0 +1,35 @@
+Steps:
+
+1. xampp\apache\conf\extra\httpd-vhosts.conf
+
+#######door2.in##########
+
+<VirtualHost *:80>
+    ServerAdmin admin@admin.com
+	DocumentRoot "E:/project/door2in/workspace/mainsite"
+	ServerName www.door2in.local
+	ServerAlias www.door2in.local
+	<Directory "E:/project/door2in/workspace/mainsite">
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride all
+		Order Deny,Allow
+		Allow from all
+		Require all granted
+	</Directory>
+</VirtualHost>
+
+2. Hosts entry
+
+127.0.0.1  www.door2in.local
+
+3. Git clone
+
+https://github.com/door2in/mainsite.git
+
+4. login MYSQL
+
+	Username : root
+	Password : 
+
+5. Import the lastest SQL dump inside "sql" folder.
+

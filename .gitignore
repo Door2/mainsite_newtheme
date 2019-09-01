@@ -1,0 +1,6 @@
+# Don't track content of these folders
+.idea/
+nbproject/
+var/
+media/
+app/etc/local.xml
