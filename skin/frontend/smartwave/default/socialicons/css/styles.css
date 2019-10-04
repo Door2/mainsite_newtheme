@@ -30,3 +30,8 @@
       -moz-border-radius: 3px;
       margin-left: 10px;
       line-height: 30px; }
+
+.addthis-smartlayers.addthis-smartlayers-desktop {
+    display: none;
+}
+
