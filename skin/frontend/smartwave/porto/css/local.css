@@ -3368,3 +3368,9 @@ body.full-width .product-view .product-img-box:not(.type-) {
 .main-nav .menu >li.menu-full-width .nav-sublist-dropdown {
     max-width: 1110px;
 }
+li.sub-categories {
+    margin-bottom: 15px;
+}
+.selected-category {
+	border: 1px solid grey;
+}
