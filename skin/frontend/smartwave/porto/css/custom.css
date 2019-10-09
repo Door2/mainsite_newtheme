@@ -217,7 +217,36 @@ float: right;
     width: 50%;
     text-align: right;
 }
+.cat_tab {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  display: inline-block;
+}
+.cat_tab li.sub-categories {
+margin-bottom: 15px;
+    width: 33%;
+    float: left;
+    text-align: center;
+    border: 1px solid #000;
+display: inline-block;
+    line-height: 40px;
+    height: 45px;
+background-color:#f0f0ed;
+ cursor:pointer;
+}
+.cat_tab .selected-category {
+    border: transparent;
+}
 
+.cat_tab  a{
+font-size: 20px;
+    font-weight: 600;
+}
+.cat_tab .selected-category a {
+color:#000;
+
+}
 @media only screen and (max-width: 600px) {
   .howItWorks .fold-wrap {
 width:100%;
@@ -226,6 +255,9 @@ display: block;
 .howItWorks .fold-wrap>div {
 width:100%;
 }
+ .cat_tab li.sub-categories {
+ width:100%;
+ }
 }
 
   /* Ashish Codes End*/ 
