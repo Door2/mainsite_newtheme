@@ -9,7 +9,7 @@
 <config>
     <modules>
         <Door2_Catalog>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </Door2_Catalog>
     </modules>
     <global>

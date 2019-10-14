@@ -3,7 +3,6 @@
     $code  = $store->getCode();
     
     $_helper    = $this->helper('catalog/output');
-    //$_category_helper = Mage::helper('catalog/category');
     $_category  = $this->getCurrentCategory();
     $_showcartbutton = Mage::getStoreConfig('porto_settings/category_grid/show_addtocart', $code);
     $_showcartbutton = Mage::getStoreConfig('porto_settings/category_grid/show_addtolinks', $code);
