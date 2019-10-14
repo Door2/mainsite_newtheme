@@ -14,35 +14,6 @@
     }
 ?>
 <?php echo $_imgHtml ?>
-<!--
-<?php $_categories = $_category->getChildrenCategories() ?>
-<?php if (count($_categories) > 0): ?>
-    <ul>
-        <?php foreach($_categories as $category): ?>
-            <?php header('Location:'.$_category_helper->getCategoryUrl($category));die(); ?>
-            <li>
-                <a href="<?php echo $_category_helper->getCategoryUrl($category) ?>"><?php echo $category->getName() ?></a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-<?php else : ?>
-    <?php foreach ($_category->getParentCategories() as $parent): ?>
-        <?php $_categories = $parent->getChildrenCategories() ?>
-        <?php if (count($_categories) > 0): ?>
-            <ul>
-                <?php foreach($_categories as $category): ?>
-                    <li class="sub-categories">
-                        <?php if($category->getName() == $_category->getName()): ?><span class="selected-category" ><?php endif; ?>
-                            <a href="<?php echo $_category_helper->getCategoryUrl($category) ?>"><?php echo $category->getName() ?></a>
-                        <?php if($category->getName() == $_category->getName()): ?></span><?php endif; ?>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-    <?php endforeach; ?>
-<?php endif; ?>
--->
-
 <?php
     if(!Mage::getStoreConfig("porto_settings/category/fullwidth_description",$code)){
         if($_description=$_category->getDescription()){
