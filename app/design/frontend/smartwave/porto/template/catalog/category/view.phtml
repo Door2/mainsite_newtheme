@@ -3,7 +3,7 @@
     $code  = $store->getCode();
     
     $_helper    = $this->helper('catalog/output');
-    $_category_helper = Mage::helper('catalog/category');
+    //$_category_helper = Mage::helper('catalog/category');
     $_category  = $this->getCurrentCategory();
     $_showcartbutton = Mage::getStoreConfig('porto_settings/category_grid/show_addtocart', $code);
     $_showcartbutton = Mage::getStoreConfig('porto_settings/category_grid/show_addtolinks', $code);
@@ -14,7 +14,7 @@
     }
 ?>
 <?php echo $_imgHtml ?>
-
+<!--
 <?php $_categories = $_category->getChildrenCategories() ?>
 <?php if (count($_categories) > 0): ?>
     <ul>
@@ -41,7 +41,7 @@
         <?php endif; ?>
     <?php endforeach; ?>
 <?php endif; ?>
-
+-->
 
 <?php
     if(!Mage::getStoreConfig("porto_settings/category/fullwidth_description",$code)){
