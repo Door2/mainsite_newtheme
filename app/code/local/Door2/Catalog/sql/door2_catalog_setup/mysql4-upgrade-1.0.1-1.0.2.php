@@ -87,6 +87,11 @@ $setup->addAttribute('catalog_product', $referencedByAttributeCode, array(
 
 $locationAttributeCode = 'service_locations';
 $setup->addAttribute('catalog_product', $locationAttributeCode, array(
+    'type' => 'varchar',
+    'backend_type' => 'text',
+    'backend_model' => 'eav/entity_attribute_backend_array',
+    'backend' => '',
+    'frontend' => '',
     'label' => 'Service Location',
     'input' => 'multiselect',
     'frontend_class' => '',
