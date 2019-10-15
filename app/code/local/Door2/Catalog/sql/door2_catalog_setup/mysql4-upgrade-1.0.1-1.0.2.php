@@ -88,11 +88,10 @@ $setup->addAttribute('catalog_product', $referencedByAttributeCode, array(
 $locationAttributeCode = 'service_locations';
 $setup->addAttribute('catalog_product', $locationAttributeCode, array(
     'label' => 'Service Location',
-    'type' => 'varchar',
-    'backend' => 'eav/entity_attribute_backend_array',
     'input' => 'multiselect',
+    'frontend_class' => '',
     'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-    'visible' => true,
+    'visible' => false,
     'required' => false,
     'user_defined' => true,
     'default' => '',
@@ -100,7 +99,9 @@ $setup->addAttribute('catalog_product', $locationAttributeCode, array(
     'is_filterable' => true,
     'is_comparable' => true,
     'visible_on_front' => false,
+    'unique' => false,
     'apply_to' => '',
+    'is_configurable' => false,
     'used_in_product_listing' => true,
     'option' => [
         'values' => [
@@ -114,13 +115,17 @@ $setup->addAttribute('catalog_product', $locationAttributeCode, array(
 
 
 $languageAttributeCode = 'languages_known';
-$setup->addAttribute('catalog_product', $languageAttributeCode, array(  
-    'label' => 'Languages Known',
+$setup->addAttribute('catalog_product', $languageAttributeCode, array(
     'type' => 'varchar',
-    'backend' => 'eav/entity_attribute_backend_array',
+    'backend_type' => 'text',
+    'backend_model' => 'eav/entity_attribute_backend_array',
+    'backend' => '',
+    'frontend' => '',
+    'label' => 'Languages Known',
     'input' => 'multiselect',
+    'frontend_class' => '',
     'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-    'visible' => true,
+    'visible' => false,
     'required' => false,
     'user_defined' => true,
     'default' => '',
@@ -128,9 +133,11 @@ $setup->addAttribute('catalog_product', $languageAttributeCode, array(
     'is_filterable' => true,
     'is_comparable' => true,
     'visible_on_front' => false,
+    'unique' => false,
     'apply_to' => '',
+    'is_configurable' => false,
     'used_in_product_listing' => true,
-	'option' => [
+    'option' => [
         'values' => [
             "hindi" => "Hindi",
             "english" => "English",
