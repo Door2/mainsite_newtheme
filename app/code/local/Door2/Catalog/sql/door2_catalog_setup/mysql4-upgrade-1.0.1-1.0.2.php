@@ -1,14 +1,11 @@
 <?php
-
 /**
  * @package Door2_Catalog
  * @author  Door2_Catalog
  */
 $installer = Mage::getResourceModel('catalog/setup', 'catalog_setup');
 $installer->startSetup();
-
 $setup = new Mage_Eav_Model_Entity_Setup('core_setup');
-
 $dispPriceAttributeCode = 'display_price';
 $setup->addAttribute('catalog_product', $dispPriceAttributeCode, array(
     'type' => 'int',
@@ -33,9 +30,6 @@ $setup->addAttribute('catalog_product', $dispPriceAttributeCode, array(
     'is_configurable' => false,
     'used_in_product_listing' => true
 ));
-
-
-
 $mobileAttributeCode = 'mobile_number';
 $setup->addAttribute('catalog_product', $mobileAttributeCode, array(
     'type' => 'int',
@@ -59,8 +53,6 @@ $setup->addAttribute('catalog_product', $mobileAttributeCode, array(
     'is_configurable' => false,
     'used_in_product_listing' => false
 ));
-
-
 $referencedByAttributeCode = 'referenced_by';
 $setup->addAttribute('catalog_product', $referencedByAttributeCode, array(
     'type' => 'varchar',
@@ -84,7 +76,6 @@ $setup->addAttribute('catalog_product', $referencedByAttributeCode, array(
     'is_configurable' => false,
     'used_in_product_listing' => false
 ));
-
 $locationAttributeCode = 'service_locations';
 $setup->addAttribute('catalog_product', $locationAttributeCode, array(
     'type' => 'varchar',
@@ -93,10 +84,11 @@ $setup->addAttribute('catalog_product', $locationAttributeCode, array(
     'backend' => '',
     'frontend' => '',
     'label' => 'Service Location',
+    'type' => 'varchar',
+    'backend' => 'eav/entity_attribute_backend_array',
     'input' => 'multiselect',
-    'frontend_class' => '',
     'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-    'visible' => false,
+    'visible' => true,
     'required' => false,
     'user_defined' => true,
     'default' => '',
@@ -104,9 +96,7 @@ $setup->addAttribute('catalog_product', $locationAttributeCode, array(
     'is_filterable' => true,
     'is_comparable' => true,
     'visible_on_front' => false,
-    'unique' => false,
     'apply_to' => '',
-    'is_configurable' => false,
     'used_in_product_listing' => true,
     'option' => [
         'values' => [
@@ -117,20 +107,14 @@ $setup->addAttribute('catalog_product', $locationAttributeCode, array(
         ]
     ]
 ));
-
-
 $languageAttributeCode = 'languages_known';
-$setup->addAttribute('catalog_product', $languageAttributeCode, array(
-    'type' => 'varchar',
-    'backend_type' => 'text',
-    'backend_model' => 'eav/entity_attribute_backend_array',
-    'backend' => '',
-    'frontend' => '',
+$setup->addAttribute('catalog_product', $languageAttributeCode, array(  
     'label' => 'Languages Known',
+    'type' => 'varchar',
+    'backend' => 'eav/entity_attribute_backend_array',
     'input' => 'multiselect',
-    'frontend_class' => '',
     'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-    'visible' => false,
+    'visible' => true,
     'required' => false,
     'user_defined' => true,
     'default' => '',
@@ -138,11 +122,9 @@ $setup->addAttribute('catalog_product', $languageAttributeCode, array(
     'is_filterable' => true,
     'is_comparable' => true,
     'visible_on_front' => false,
-    'unique' => false,
     'apply_to' => '',
-    'is_configurable' => false,
     'used_in_product_listing' => true,
-    'option' => [
+	'option' => [
         'values' => [
             "hindi" => "Hindi",
             "english" => "English",
@@ -156,7 +138,6 @@ $setup->addAttribute('catalog_product', $languageAttributeCode, array(
         ]
     ]
 ));
-
 $experienceAttributeCode = 'work_experience';
 $setup->addAttribute('catalog_product', $experienceAttributeCode, array(
     'type' => 'varchar',
@@ -188,7 +169,6 @@ $setup->addAttribute('catalog_product', $experienceAttributeCode, array(
         ]
     ]
 ));
-
 $discountAttributeCode = 'discount_percent';
 $setup->addAttribute('catalog_product', $discountAttributeCode, array(
     'type' => 'varchar',
@@ -220,15 +200,10 @@ $setup->addAttribute('catalog_product', $discountAttributeCode, array(
         ]
     ]
 ));
-
-
-
 $entity = Mage_Catalog_Model_Product::ENTITY;
-
 // Add the attribute to the attribute sets:
 $entityType = Mage::getModel('catalog/product')->getResource()->getEntityType();
 $collection = Mage::getResourceModel('eav/entity_attribute_set_collection')->setEntityTypeFilter($entityType->getId());
-
 foreach ($collection as $attributeSet) {
     $attributeGroupId = $installer->getDefaultAttributeGroupId('catalog_product', $attributeSet->getId());
     $installer->addAttributeToSet($entity, $attributeSet->getId(), $attributeGroupId, $dispPriceAttributeCode);
@@ -239,5 +214,4 @@ foreach ($collection as $attributeSet) {
     $installer->addAttributeToSet($entity, $attributeSet->getId(), $attributeGroupId, $experienceAttributeCode);
     $installer->addAttributeToSet($entity, $attributeSet->getId(), $attributeGroupId, $discountAttributeCode);
 }
-
 $installer->endSetup();
