@@ -151,10 +151,9 @@ margin-bottom: 10px;
  .howItWorks .fold-wrap h4 {
     text-transform: uppercase;
 }
-.category-products li.item .product-image img{
-height:200px;
-
-}
+/*.category-products li.item .product-image img{
+ height:200px;
+}*/
 .Ratemain {
     margin: 10px 10px;
 margin-top: 20px;
